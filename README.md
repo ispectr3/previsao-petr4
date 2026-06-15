@@ -20,8 +20,6 @@ O modelo **Prophet** apresentou o melhor desempenho geral em relação ao mercad
 ## 📁 Estrutura do Repositório
 
 - `series_temporais_PETR4.ipynb`: Notebook completo com todo o processo de extração de dados, análise exploratória, treino e avaliação dos modelos.
-- `Roteiro de Fala_ Previsão PETR4.SA (6 Minutos).md` (e versões em PDF): Roteiro sintetizado focado em apresentações e pitch de resultados.
-- Demais PDFs contêm a fundamentação teórica e slides das análises.
 
 ## 🚀 Próximos Passos
 - Integração de variáveis exógenas como **Cotação do Dólar** e **Preço do Barril de Petróleo (Brent)** para refinar ainda mais a capacidade preditiva do modelo Prophet.
