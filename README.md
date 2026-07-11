@@ -1,28 +1,43 @@
-# 📈 Previsão de Cotações de Ações - Petrobras (PETR4.SA)
+# 📈 Previsão de Séries Temporais: Ações Petrobras (PETR4)
 
-Este projeto realiza uma análise de séries temporais das ações da Petrobras (PETR4) com o objetivo de prever o comportamento futuro dos preços na bolsa de valores. A análise inclui exploração dos dados históricos (5 anos) e uma comparação direta entre modelos clássicos e modernos de predição.
+Este projeto de Data Science aplica modelos preditivos para analisar e prever o comportamento histórico e futuro das ações da Petrobras (PETR4). Utilizando 5 anos de dados diários, o estudo compara abordagens estatísticas clássicas com modelos modernos de Machine Learning para identificar qual técnica se adapta melhor à volatilidade do mercado financeiro.
 
 ## 🎯 Objetivo
-Comparar diferentes abordagens de modelagem preditiva para descobrir qual entende melhor a volatilidade do mercado financeiro e fornece as projeções mais precisas.
 
-## 🧠 Modelos Avaliados
-Durante a análise, dois modelos principais foram testados e comparados:
+O principal objetivo é realizar uma análise comparativa de diferentes abordagens de modelagem preditiva. A busca é encontrar o modelo que melhor compreende a volatilidade e as quebras estruturais do mercado, fornecendo as projeções mais precisas para ativos voláteis do setor de energia.
 
-1. **Holt-Winters**: Modelo estatístico clássico focado em sazonalidade e tendências passadas.
-2. **Prophet (Facebook/Meta)**: Modelo moderno que lida excepcionalmente bem com mudanças bruscas de tendência, crises e feriados.
+## 🧠 Metodologia e Modelos
 
-## 🏆 Resultados
-O modelo **Prophet** apresentou o melhor desempenho geral em relação ao mercado real durante a janela de teste de 90 dias, acompanhando muito melhor a curva da ação.
+O pipeline de análise consiste em extração de dados, Análise Exploratória de Dados (EDA), teste de estacionariedade (ADF), e finalmente o treino e avaliação dos modelos.
 
-* **Erro Médio do Prophet**: ~4,2%
-* A tecnologia se provou superior e mais adaptável às oscilações bruscas de ações voláteis como as de petróleo.
+Dois modelos principais foram desenvolvidos e avaliados em uma janela de teste de 90 dias:
+
+| Modelo | Tipo | Características Principais |
+| :--- | :--- | :--- |
+| **Holt-Winters** | Estatístico Clássico | Suavização Exponencial Tripla. Focado em capturar tendências e sazonalidade anual explícita (período de 365 dias). |
+| **Prophet** | Machine Learning (Facebook/Meta) | Modelo moderno altamente adaptável. Lida excepcionalmente bem com mudanças bruscas de tendência (changepoints), crises e sazonalidade semanal. |
+
+## 🏆 Resultados e Avaliação
+
+A avaliação utilizou as métricas **MAE (Erro Absoluto Médio)**, **RMSE (Raiz do Erro Quadrático Médio)** e **MAPE (Erro Percentual Absoluto Médio)**.
+
+O modelo **Prophet** apresentou o melhor desempenho geral, acompanhando de forma muito mais precisa a curva da ação em relação aos valores reais durante a janela de teste.
+
+- **Erro Médio (MAPE) do Prophet**: ~4,2%
+- **Superioridade**: A tecnologia se provou mais robusta e adaptável às oscilações bruscas de ações voláteis (como o setor de petróleo), superando as limitações lineares do Holt-Winters.
 
 ## 📁 Estrutura do Repositório
 
-- `series_temporais_PETR4.ipynb`: Notebook completo com todo o processo de extração de dados, análise exploratória, treino e avaliação dos modelos.
+O projeto é apresentado em um único Jupyter Notebook completo, contendo todas as etapas da análise:
+
+- `series_temporais_PETR4.ipynb`: Notebook principal que inclui a extração de dados via `yfinance`, análise exploratória, testes de estacionariedade (ADF), implementação dos modelos (Holt-Winters e Prophet) e visualização comparativa das métricas.
 
 ## 🚀 Próximos Passos
-- Integração de variáveis exógenas como **Cotação do Dólar** e **Preço do Barril de Petróleo (Brent)** para refinar ainda mais a capacidade preditiva do modelo Prophet.
+
+Para refinar ainda mais a capacidade preditiva do modelo Prophet, as próximas iterações do projeto focarão em:
+
+1. Integração de **variáveis exógenas**, como a Cotação do Dólar (USD/BRL) e o Preço do Barril de Petróleo (Brent).
+2. Ajuste fino dos hiperparâmetros do Prophet para otimizar o tratamento de outliers.
 
 ---
 *Projeto desenvolvido por Kaique como portfólio de Data Science e Análise de Séries Temporais.*
