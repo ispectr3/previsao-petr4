@@ -1,6 +1,6 @@
 # 📈 Previsão de Séries Temporais: Ações Petrobras (PETR4)
 
-Este projeto de Data Science aplica modelos preditivos para analisar e prever o comportamento histórico e futuro das ações da Petrobras (PETR4). Utilizando 5 anos de dados diários, o estudo compara abordagens estatísticas clássicas com modelos modernos de Machine Learning para identificar qual técnica se adapta melhor à volatilidade do mercado financeiro.
+Este projeto de Data Science aplica modelos preditivos para analisar e prever o comportamento histórico e futuro das ações da Petrobras (PETR4). Utilizando dados históricos diários, o estudo compara abordagens estatísticas clássicas e modelos de forecasting para identificar qual técnica se adapta melhor à volatilidade do mercado financeiro.
 
 ## 🎯 Objetivo
 
@@ -10,7 +10,7 @@ O principal objetivo é realizar uma análise comparativa de diferentes abordage
 
 O pipeline de análise consiste em extração de dados, Análise Exploratória de Dados (EDA), teste de estacionariedade (ADF), e finalmente o treino e avaliação dos modelos.
 
-Dois modelos principais foram desenvolvidos e avaliados em uma janela de teste de 90 dias:
+Os modelos documentados no notebook são Holt-Winters e Prophet; eles são avaliados em uma janela de teste de 90 dias:
 
 | Modelo | Tipo | Características Principais |
 | :--- | :--- | :--- |
@@ -41,3 +41,8 @@ Para refinar ainda mais a capacidade preditiva do modelo Prophet, as próximas i
 
 ---
 *Projeto desenvolvido por Kaique como portfólio de Data Science e Análise de Séries Temporais.*
+
+
+## Reprodutibilidade e uso responsável
+
+Instale as dependências com `python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt` e execute o notebook. Os resultados dependem da fonte externa e da data de coleta. Este é um estudo educacional; desempenho histórico não garante retorno futuro e não constitui recomendação financeira.
